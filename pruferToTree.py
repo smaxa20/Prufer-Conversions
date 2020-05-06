@@ -81,17 +81,3 @@ def _pruferToTree(prufer, ignore, n):
             _pruferToTree(prufer, ignore, n)    # Recursive call with new Prufer Sequence and ignore list
             break
         node += 1
-
-
-print(pruferToTree([1,3,3,4])[0])
-print()
-print(pruferToTree([1,3,3,4])[1])
-print()
-print(pruferToTree([1,3,3,4])[2])
-print()
-print()
-print(pruferToTree([6,2,2,3,3,3])[0])
-print()
-print(pruferToTree([6,2,2,3,3,3])[1])
-print()
-print(pruferToTree([6,2,2,3,3,3])[2])

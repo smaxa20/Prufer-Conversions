@@ -67,24 +67,7 @@ def _incidenceToPrufer(incidence, prufer):
         minLeaf = min(leaves.keys())            # Find the smallest leaf node...
         parent = leaves[minLeaf][0]
         incidence.pop(minLeaf)                  # Remove it from the incidence list...
-        incidence[parent].remove(minLeaf)       # Remove the reference to it from it's parent's adjacency list...
-        prufer.append(parent)                   # Append it's parent node to the Prufer Sequence...
+        incidence[parent].remove(minLeaf)       # Remove the reference to it from its parent's adjacency list...
+        prufer.append(parent)                   # Append its parent node to the Prufer Sequence...
 
         _incidenceToPrufer(incidence, prufer)   # And make the recursive call.
-
-
-# All three of these represent the same tree
-incidence = {1: [2, 3], 2: [1], 3: [1, 4, 5], 4: [3, 6], 5: [3], 6: [4]}
-matrix = [
-    [0, 1, 1, 0, 0, 0],
-    [1, 0, 0, 0, 0, 0],
-    [1, 0, 0, 1, 1, 0],
-    [0, 0, 1, 0, 0, 1],
-    [0, 0, 1, 0, 0, 0],
-    [0, 0, 0, 1, 0, 0]
-]
-edges = [[1, 2], [3, 1], [3, 5], [4, 3], [6, 4]]
-
-print(incidenceToPrufer(incidence))
-print(matrixToPrufer(matrix))
-print(edgesToPrufer(edges))
